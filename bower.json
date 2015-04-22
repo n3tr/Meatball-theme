@@ -1,0 +1,19 @@
+{
+  "name": "Meatballio-theme",
+  "version": "1.0.0",
+  "authors": [
+    "Jirat Ki. <saakyz@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://meatball.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}
