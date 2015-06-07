@@ -21,3 +21,5 @@ gulp.task('watch',function() {
    gulp.watch('./assets/**/*.scss', ['scss']);
    gulp.watch('./assets/**/*.css', ['combine_css']);
 });
+
+gulp.task('default', ['scss', 'combine_css','watch']);

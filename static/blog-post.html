@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1138798796137520',
+              xfbml      : true,
+              version    : 'v2.3'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+
+        <header>
+          <div class="container">
+            <h1>LOGO</h1>
+          </div>
+        </header>
+        <main id="main" role="main">
+          <div class="container">
+            <article id="blog-post" class="post single">
+              <div class="post-header clearfix">
+                <h2 class="post-title">รู้จักกับ Hubot, วิธีการติดตั้ง ยาวไปถึง Deploy to Heoku สร้างไฟล์ .GITIGNORE ได้ง่ายๆ ด้วย GITIGNORE.IO</h2>
+                <div class="post-meta clearfix">
+                  <time class="post-time"><span class="date">12</span><span class="month">APR</span><span class="year">2015</span></time>
+                  <a href="#" class="post-category">Development</a>
+                </div>
+              </div>
+              <div class="post-hero-image">
+                <img src="./img/hero-image.jpg" />
+              </div>
+              <div class="post-content">
+                <p>Hubot เป็น Chatbot ชนิดหนึ่งที่ถูกสร้างขึ้นโดย GitHub เพื่อเป็นผู้ใช้อำนวยความสะดวกให้กับเราผ่านทางแชทต่างๆ เช่นหากเราต้องการแผนที่, ลิ้งค์วิดีโอ, หรือรูปภาพต่างๆ เราสามารถสั่ง Hubot ผ่านทางแชทได้ทันที (ChatOps)</p>
+                <p>
+                  นอกจากนี้ Hubot ยังมี Script การทำงานอื่นๆ ที่เราสามารถติดตั้งเพื่อเพิ่มความสามารถให้กับ Hubot ให้สามารถมาทำให้อะไรให้กับเราได้มากขึ้นอีกด้วย เช่น การบันทึกข้อความ, การสั่งรัน Job บน Jenkins, หรือมากกว่าขึ้นเราสามารถสั่ง Deploy และ Rollback ผ่านทาง Hubot ด้วยก็ยังได้
+                </p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d52294.13809365696!2d135.77056303710933!3d34.997100702888815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sth!4v1431320219358" width="800" height="600" frameborder="0" style="border:0"></iframe>
+
+                <p>
+                  เบื้องหลัง Hubot คือ Node.js/CoffeeScript โดยตัว Hubot ได้ถูกออกแบบมาให้สามารถทำงานบน Heroku ได้เป็นอย่างดี และรองรับบริการแชทที่หลากหลาย เช่น Camfire, Hipchat, Slack, หรือแม้กระทั่ง IRC
+                </p>
+
+                <h3>
+                  เริ่มติดตั้ง Hubot
+                </h3>
+
+                <p>
+                  เนื่องจาก Hubot เป็น Node.js Application ดั้งนั้นเราจำเป็นต้องมี Node Package Manager (NPM) เพื่อใช้ในการติดตั้ง Hubot หากยังไม่มีสามารถดาวโหลดได้จากเว็บไซต์ http://nodejs.org
+                </p>
+                <p>
+                  <blockquote cite="http://">
+                    “ That means you can use 3rd party which call advertisingIdentifier but make sureAdSupport.framework not include in your binary even you remove it from your project/workspace. (because some 3rd party load AdSupport into binary in compile time) ”
+                  </blockquote>
+                </p>
+
+                <p>
+                  จากนั้นให้ไปสร้าง Application บน Heroku เพื่อใช้ในการส่ง Hubot ขึ้นไป (หากใครไม่เคยใช้ Heroku คร่าวๆ คือ Heroku เป็น Application Hosting ประเภท Platform as a service (PAAS) โดยที่เราสามารถนำ Code ของเราขึ้นไปรันได้ทันที โดยหากเป็น App เล็กที่ทรัพยากรไม่มากนั้นสามารถใช้งานได้ฟรี)
+                </p>
+
+                <div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="500"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553"><p>Be the first to know when we release a new video by subscribing to our official Facebook Developers YouTube channel!  http://www.youtube.com/facebookdevelopers</p>Posted by <a href="https://www.facebook.com/FacebookDevelopers">Facebook Developers</a> on <a href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553">Wednesday, May 29, 2013</a></blockquote></div></div>
+
+
+                <p>
+                  เนื่องจากจะสร้าง Application บน Heroku ได้ต้องมี Heroku Toolbelt เสียก่อน หากใครยังไม่มีสามารถโหลดได้ที่ https://toolbelt.heroku.com และอย่าลืมสมัครสมาชิกก่อนนะครับ และอย่าลืม login ผ่าน cli ก่อนด้วย
+                </p>
+
+
+              </div>
+
+              <section class="section">
+                <header class="section-header">
+                  <h2 class="section-header-title center">Comments</h2>
+                </header>
+                <div class="blog-comments">
+                  <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="720px" data-numposts="5" data-colorscheme="light"></div>
+
+                </div>
+              </section>
+            </article>
+
+          </div>
+        </main>
+        <footer>
+          <div class="footer">
+            Footer Here
+          </div>
+        </footer>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>
